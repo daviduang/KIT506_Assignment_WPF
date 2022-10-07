@@ -19,3 +19,12 @@
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\KIT506_Assignment_WPF.pdb
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\KIT506_Assignment_WPF.genruntimeconfig.cache
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\ref\KIT506_Assignment_WPF.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\Google.Protobuf.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\MySql.Data.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\Ubiety.Dns.Core.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\ZstdNet.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\KIT506_Assignment_WPF.csproj.CopyComplete

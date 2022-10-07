@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:KIT506_Assignment_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="700">
-
-
+    
     <Grid>
 
         <StackPanel>
@@ -72,16 +71,14 @@
             </Grid>
 
             <!-- Researcher List View  -->
-            <DataGrid Margin="0 10 0 0">
+            <DataGrid x:Name="ResearchersTable" Margin="0 10 0 0">
 
                 <!-- Column definitions -->
                 <DataGrid.Columns>
 
-                    <!-- Binging="{Binding (VariableName)}"  -->
-
-                    <DataGridTextColumn Header="Name" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Position" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Level" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Name" Width="*" Binding="{Binding family_name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Position" Width="*" Binding="{Binding given_name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Level" Width="*" Binding="{Binding level}"></DataGridTextColumn>
                     
                 </DataGrid.Columns>
 

@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using KIT506_Assignment_WPF.Controller;
+using KIT506_Assignment_WPF.Model;
+using KIT506_Assignment_WPF.Database;
+
 namespace KIT506_Assignment_WPF
 {
     /// <summary>
@@ -20,9 +24,55 @@ namespace KIT506_Assignment_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        // Create list of researchers
+        public List<Researcher> researchers;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            // Connect to researcher database adapter
+            ResearcherAdapter db = new ResearcherAdapter {};
+            this.researchers = db.allResearchers();
+
+            showAllResearchers();
         }
+
+        // Display all researchers
+        public void showAllResearchers()
+        {
+            // Clear researcher list
+            ResearchersTable.Items.Clear();
+
+            // Add all researchers into the ResearchersTable
+            foreach (Researcher researcher in researchers)
+            {
+                ResearchersTable.Items.Add(researcher);
+            }
+        }
+
+        // Filter researcher list by level
+        public void filterResearchers(string level)
+        {
+            // Clear researcher list
+            ResearchersTable.Items.Clear();
+
+            // Generate a filtered researcher list
+            IEnumerable<Researcher> filteredResearchers =
+                from researcher in researchers
+                where researcher.level == level
+                select researcher;
+
+            // Update the ResearchersTable based on the filtered researcher list
+            foreach (Researcher researcher in filteredResearchers)
+            {
+                ResearchersTable.Items.Add(researcher);
+            }
+        }
+
+        // Binding events
     }
+
+
 }
