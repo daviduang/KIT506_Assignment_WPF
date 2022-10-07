@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using KIT506_Assignment_WPF.Database;
 using KIT506_Assignment_WPF.Model;
 
@@ -19,28 +20,36 @@ namespace KIT506_Assignment_WPF.Controller
             this.researchers = db.allResearchers();
         }
 
-        // Filter Researchers List by Level
-        public List<Researcher> filterByLevel(string level)
+        // Display all researchers
+        public List<Researcher> allResearchers()
+        {
+            return this.researchers;
+        }
+
+        // Display all students
+        public List<Researcher> allStudents()
         {
 
-            Console.WriteLine(level); // dele
+            // Generate a filtered researcher list
+            List<Researcher> allStudents =
+                (from researcher in researchers
+                where researcher.type.ToString().Equals("Student")
+                select researcher).ToList();
 
-            List<Researcher> filtered_researchers = new List<Researcher>();
+            return allStudents;
+        }
 
+        // Filter researcher list by level
+        public List<Researcher> filterResearchers(string level)
+        {
 
-            foreach (Researcher researcher in this.researchers)
-            {
-                Console.WriteLine(researcher.level); // dele
+            // Generate a filtered researcher list
+            List<Researcher> filteredResearchers =
+                (from researcher in researchers
+                where researcher.level == level
+                select researcher).ToList();
 
-
-                if (researcher.level == level)
-                {
-
-                    filtered_researchers.Add(researcher);
-                }
-            }
-
-            return filtered_researchers;
+            return filteredResearchers;
         }
     }
 }

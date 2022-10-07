@@ -12,7 +12,7 @@
         <StackPanel>
 
             <TextBlock FontWeight="Bold" TextAlignment="Center">All Researcher List</TextBlock>
-          
+
             <!-- Search bar group -->
             <Grid Margin="0 10 0 0">
                 <Grid.ColumnDefinitions>
@@ -37,6 +37,7 @@
                     </TextBlock>
                 </Grid>
 
+                <!-- Search button -->
                 <Button x:Name="searchBtn" Grid.Column="1" Content="Search" Height="20" VerticalAlignment="Top" Margin="10 0 10 0"/>
                 
             </Grid>
@@ -85,7 +86,8 @@
                             </MultiBinding>
                         </DataGridTextColumn.Binding>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Position" Width="*" Binding="{Binding current_start}"></DataGridTextColumn>
+                    
+                    <DataGridTextColumn Header="Position" Width="*" Binding="{Binding given_name}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Level" Width="*" Binding="{Binding level}"></DataGridTextColumn>
                     
                 </DataGrid.Columns>
