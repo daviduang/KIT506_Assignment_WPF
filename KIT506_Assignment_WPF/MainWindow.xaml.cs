@@ -25,67 +25,28 @@ namespace KIT506_Assignment_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        // Create list of researchers
-        public List<Researcher> researchers;
+        ResearcherController controller;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            // Connect to researcher database adapter
-            ResearcherAdapter db = new ResearcherAdapter {};
-            this.researchers = db.allResearchers();
+            // Initialise researcher list view
+            this.controller = new ResearcherController {};
 
-            showAllResearchers();
+            // Display all researchers
+            List<Researcher> researchers = controller.allResearchers();
+            updateResearcherListView(researchers);
         }
 
-        // Display all researchers
-        public void showAllResearchers()
+        // Update researcher list view base on a researcher list
+        private void updateResearcherListView(List<Researcher> researchers)
         {
             // Clear researcher list
             ResearchersTable.Items.Clear();
 
             // Add all researchers into the ResearchersTable
             foreach (Researcher researcher in researchers)
-            {
-                ResearchersTable.Items.Add(researcher);
-            }
-        }
-
-        // Display all students
-        public void showAllStudents()
-        {
-            // Clear researcher list
-            ResearchersTable.Items.Clear();
-
-            // Generate a filtered researcher list
-            IEnumerable<Researcher> filteredResearchers =
-                from researcher in researchers
-                where researcher.type.ToString().Equals("Student")
-                select researcher;
-
-            // Update the ResearchersTable based on the filtered researcher list
-            foreach (Researcher researcher in filteredResearchers)
-            {
-                ResearchersTable.Items.Add(researcher);
-            }
-        }
-
-        // Filter researcher list by level
-        public void filterResearchers(string level)
-        {
-            // Clear researcher list
-            ResearchersTable.Items.Clear();
-
-            // Generate a filtered researcher list
-            IEnumerable<Researcher> filteredResearchers =
-                from researcher in researchers
-                where researcher.level == level
-                select researcher;
-
-            // Update the ResearchersTable based on the filtered researcher list
-            foreach (Researcher researcher in filteredResearchers)
             {
                 ResearchersTable.Items.Add(researcher);
             }
@@ -101,20 +62,21 @@ namespace KIT506_Assignment_WPF
                 int length = e.AddedItems[0].ToString().Length;
                 string level = e.AddedItems[0].ToString().Substring(length-1, 1);
 
-                filterResearchers(level);
+                List<Researcher> filteredResearchers = controller.filterResearchers(level);
+                updateResearcherListView(filteredResearchers);
             }
         }
 
         // Show all researchers
         private void clickShowRearchers(object sender, RoutedEventArgs e)
         {
-            showAllResearchers();
+            updateResearcherListView(controller.allResearchers());
         }
 
         // Show student only
         private void clickShowStudents(object sender, RoutedEventArgs e)
         {
-            showAllStudents();
+            updateResearcherListView(controller.allStudents());
         }
 
     }
