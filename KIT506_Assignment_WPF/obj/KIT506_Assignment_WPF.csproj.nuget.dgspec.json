@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
         "packagesPath": "C:\\Users\\ryenz\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+=======
+    "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {}
+  },
+  "projects": {
+    "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "projectName": "KIT506_Assignment_WPF",
+        "projectPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "packagesPath": "C:\\Users\\ryenz\\.nuget\\packages\\",
+        "outputPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ryenz\\AppData\\Roaming\\NuGet\\NuGet.Config",

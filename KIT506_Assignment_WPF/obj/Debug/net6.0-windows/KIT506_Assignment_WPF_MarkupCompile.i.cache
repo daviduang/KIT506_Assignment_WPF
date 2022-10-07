@@ -4,11 +4,16 @@
 winexe
 C#
 .cs
+<<<<<<< Updated upstream
 C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\
+=======
+J:\UnityGame\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\
+>>>>>>> Stashed changes
 KIT506_Assignment_WPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< Updated upstream
 C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WPF\App.xaml
 11407045341
 
@@ -17,4 +22,14 @@ C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WP
 MainWindow.xaml;
 
 True
+=======
+J:\UnityGame\KIT506_Assignment_WPF\KIT506_Assignment_WPF\App.xaml
+2165342841
+
+151503133246
+2021871517497
+MainWindow.xaml;Researcher_Report.xaml;
+
+False
+>>>>>>> Stashed changes
 

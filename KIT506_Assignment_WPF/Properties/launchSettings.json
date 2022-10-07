@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "KIT506_Assignment_WPF": {
+      "commandName": "Project"
+    },
+    "配置文件 1": {
+      "commandName": "Executable",
+      "executablePath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\Researcher_Report.xaml"
+    }
+  }
+}

@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KIT506_Assignment_WPF
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WPF\
+=======
+build_property.ProjectDir = J:\UnityGame\KIT506_Assignment_WPF\KIT506_Assignment_WPF\
+>>>>>>> Stashed changes
