@@ -28,13 +28,13 @@ namespace KIT506_Assignment_WPF
 
         // Create list of researchers
         public List<Researcher> researchers;
-
+        private ResearcherAdapter db;
         public MainWindow()
         {
             InitializeComponent();
 
             // Connect to researcher database adapter
-            ResearcherAdapter db = new ResearcherAdapter {};
+            db = new ResearcherAdapter {};
             this.researchers = db.allResearchers();
 
             showAllResearchers();
@@ -115,6 +115,13 @@ namespace KIT506_Assignment_WPF
         private void clickShowStudents(object sender, RoutedEventArgs e)
         {
             showAllStudents();
+        }
+
+        private void showOneResearcher(string id)
+        {
+            Researcher researcher = new Researcher();
+            researcher = db.getOneResearcher(id);
+            Debug.WriteLine(researcher);
         }
 
     }

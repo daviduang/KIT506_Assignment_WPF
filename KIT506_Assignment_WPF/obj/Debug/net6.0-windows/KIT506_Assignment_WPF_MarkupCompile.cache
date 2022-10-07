@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\
-KIT506_Assignment_WPF
+C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\
+KIT506_Assignment_WPF_nuyk4oo1_wpftmp
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\App.xaml
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+C:\Users\ryenz\OneDrive\文档\GitHub\KIT506_Assignment_WPF\KIT506_Assignment_WPF\App.xaml
 11407045341
 
-122010853728
-202842992841
+14-899461604
+4041375659786
 MainWindow.xaml;
 
-False
+True
 

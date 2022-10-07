@@ -22,6 +22,15 @@ namespace KIT506_Assignment_WPF.Model
         public String level { get; set; }
         public DateTime utas_start { get; set; }
         public DateTime current_start { get; set; }
+        public float tenure
+        {
+            get
+            {
+                return (float)((current_start - utas_start).Days) / 365;
+            }
+            set { }
+        }
+        
     }
 }
 
