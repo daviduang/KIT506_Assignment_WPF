@@ -85,6 +85,7 @@
                             </MultiBinding>
                         </DataGridTextColumn.Binding>
                     </DataGridTextColumn>
+                    
                     <DataGridTextColumn Header="Position" Width="*" Binding="{Binding given_name}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Level" Width="*" Binding="{Binding level}"></DataGridTextColumn>
                     
