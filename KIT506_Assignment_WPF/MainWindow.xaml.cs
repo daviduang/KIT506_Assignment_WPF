@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using KIT506_Assignment_WPF.Controller;
 using KIT506_Assignment_WPF.Model;
 using KIT506_Assignment_WPF.Database;
+using System.Diagnostics;
 
 namespace KIT506_Assignment_WPF
 {
@@ -52,6 +53,25 @@ namespace KIT506_Assignment_WPF
             }
         }
 
+        // Display all students
+        public void showAllStudents()
+        {
+            // Clear researcher list
+            ResearchersTable.Items.Clear();
+
+            // Generate a filtered researcher list
+            IEnumerable<Researcher> filteredResearchers =
+                from researcher in researchers
+                where researcher.type.ToString().Equals("Student")
+                select researcher;
+
+            // Update the ResearchersTable based on the filtered researcher list
+            foreach (Researcher researcher in filteredResearchers)
+            {
+                ResearchersTable.Items.Add(researcher);
+            }
+        }
+
         // Filter researcher list by level
         public void filterResearchers(string level)
         {
@@ -72,6 +92,31 @@ namespace KIT506_Assignment_WPF
         }
 
         // Binding events
+
+        // Filter researcher list by level
+        private void updateResearcherList(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                int length = e.AddedItems[0].ToString().Length;
+                string level = e.AddedItems[0].ToString().Substring(length-1, 1);
+
+                filterResearchers(level);
+            }
+        }
+
+        // Show all researchers
+        private void clickShowRearchers(object sender, RoutedEventArgs e)
+        {
+            showAllResearchers();
+        }
+
+        // Show student only
+        private void clickShowStudents(object sender, RoutedEventArgs e)
+        {
+            showAllStudents();
+        }
+
     }
 
 
