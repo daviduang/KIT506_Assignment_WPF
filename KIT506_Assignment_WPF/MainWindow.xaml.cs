@@ -25,14 +25,15 @@ namespace KIT506_Assignment_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        ResearcherController controller;
+        // Initialise researcher list controller
+        ResearcherController controller = new ResearcherController ();
+
+        // Initialise researcher detail page view
+        ResearcherDetailPage researcherDetailPage;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            // Initialise researcher list view
-            this.controller = new ResearcherController {};
 
             // Display all researchers
             List<Researcher> researchers = controller.allResearchers();
@@ -55,8 +56,9 @@ namespace KIT506_Assignment_WPF
         // Binding events
 
         // Filter researcher list by level
-        private void updateResearcherList(object sender, SelectionChangedEventArgs e)
+        private void selectResearcherList(object sender, SelectionChangedEventArgs e)
         {
+            // If the selected item list is not empty
             if (e.AddedItems.Count > 0)
             {
                 int length = e.AddedItems[0].ToString().Length;
@@ -79,6 +81,39 @@ namespace KIT506_Assignment_WPF
             updateResearcherListView(controller.allStudents());
         }
 
+        // Search researcher by firstname or lastname
+        private void clickSearchButton(object sender, RoutedEventArgs e)
+        {
+
+            // retrieve the searched researcher list
+            List<Researcher> searchedResearchers = controller.searchResearchers(SearchFieldName.Text);
+
+            // if the searched researcher list is empty, display a no found message
+            if (searchedResearchers.Count == 0)
+            {
+                MessageBox.Show("No Result Found");
+            }
+            else
+            {
+                updateResearcherListView(searchedResearchers);
+            }
+        }
+
+
+        // Show Researcher details page
+        private void ResearchersTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // If the selected item list is not empty
+            if (e.AddedItems.Count > 0)
+            {
+                // Get selected researcher's id
+                int researcherId = ((Researcher)e.AddedItems[0]).id;
+
+                // Initialise the Researcher Detail Page
+                researcherDetailPage = new ResearcherDetailPage(researcherId);
+                researcherDetailPage.Show();
+            }
+        }
     }
 
 

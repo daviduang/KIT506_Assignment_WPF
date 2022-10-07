@@ -22,13 +22,13 @@
 
                 <!-- Text box with placeholder -->
                 <Grid Margin="10 0 0 0">
-                    <TextBox Width="500" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchTermTextBox" />
+                    <TextBox Width="500" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchFieldName" />
                     <TextBlock Margin="10 0 0 0" IsHitTestVisible="False" Text="Enter first name or last name here" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="DarkGray">
                         <TextBlock.Style>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="Visibility" Value="Collapsed"/>
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                    <DataTrigger Binding="{Binding Text, ElementName=SearchFieldName}" Value="">
                                         <Setter Property="Visibility" Value="Visible"/>
                                     </DataTrigger>
                                 </Style.Triggers>
@@ -38,7 +38,7 @@
                 </Grid>
 
                 <!-- Search button -->
-                <Button x:Name="searchBtn" Grid.Column="1" Content="Search" Height="20" VerticalAlignment="Top" Margin="10 0 10 0"/>
+                <Button x:Name="searchBtn" Grid.Column="1" Content="Search" Height="20" VerticalAlignment="Top" Margin="10 0 10 0" Click="clickSearchButton"/>
                 
             </Grid>
 
@@ -61,7 +61,7 @@
                 <TextBlock Grid.Column="2" Margin="10 0 10 0" TextAlignment="Center">Employment Level:</TextBlock>
 
                 <!-- Employment Level drop down menu -->
-                <ComboBox Grid.Column="3" Height="20" VerticalAlignment="Top" Margin="10 0 10 0" SelectionChanged="updateResearcherList">
+                <ComboBox Grid.Column="3" Height="20" VerticalAlignment="Top" Margin="10 0 10 0" SelectionChanged="selectResearcherList">
                     <ComboBoxItem Content="Level A"></ComboBoxItem>
                     <ComboBoxItem Content="Level B"></ComboBoxItem>
                     <ComboBoxItem Content="Level C"></ComboBoxItem>
@@ -72,12 +72,14 @@
             </Grid>
 
             <!-- Researcher List View  -->
-            <DataGrid x:Name="ResearchersTable" Margin="0 10 0 0">
+            <DataGrid x:Name="ResearchersTable" Margin="0 10 0 0" SelectionChanged="ResearchersTable_SelectionChanged">
 
                 <!-- Column definitions -->
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Header="Name" Width="*">
+                    <DataGridTextColumn Header="Name" Width="*" >
+                        
+                        <!-- Binding multiple variables in a format -->
                         <DataGridTextColumn.Binding>
                             <MultiBinding StringFormat="{}{0}, {1} ({2})">
                                 <Binding Path="family_name"></Binding>
@@ -86,8 +88,7 @@
                             </MultiBinding>
                         </DataGridTextColumn.Binding>
                     </DataGridTextColumn>
-                    
-                    <DataGridTextColumn Header="Position" Width="*" Binding="{Binding given_name}"></DataGridTextColumn>
+
                     <DataGridTextColumn Header="Level" Width="*" Binding="{Binding level}"></DataGridTextColumn>
                     
                 </DataGrid.Columns>

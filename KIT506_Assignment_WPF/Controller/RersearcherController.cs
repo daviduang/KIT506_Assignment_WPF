@@ -51,6 +51,18 @@ namespace KIT506_Assignment_WPF.Controller
 
             return filteredResearchers;
         }
+
+        // Filter researcher by firstname or lastname
+        public List<Researcher> searchResearchers(string name)
+        {
+            // Generate a filtered researcher list
+            List<Researcher> filteredResearchers =
+                (from researcher in researchers
+                 where researcher.family_name == name || researcher.given_name == name
+                 select researcher).ToList();
+
+            return filteredResearchers;
+        }
     }
 }
 
