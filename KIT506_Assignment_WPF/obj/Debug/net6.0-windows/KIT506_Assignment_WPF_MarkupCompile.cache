@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\App.xaml
-2-2034451565
+31018813231
 
-13-1779230172
+14-831799476
 202842992841
-MainWindow.xaml;ResearcherDetailPage.xaml;
+MainWindow.xaml;ResearcherDetailPage.xaml;Researcher_Report.xaml;
 
-False
+True
 

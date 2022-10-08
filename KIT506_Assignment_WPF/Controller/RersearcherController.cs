@@ -11,12 +11,14 @@ namespace KIT506_Assignment_WPF.Controller
         // Create list of researchers
         public List<Researcher> researchers;
 
+        // Create a db connection
+        ResearcherAdapter db;
+
         // Initialise the lise of researchers
         public ResearcherController()
         {
-            // Connect to researcher database
-            ResearcherAdapter db = new ResearcherAdapter {};
-
+            // Connect to researcher database and initalise the de
+            this.db = new ResearcherAdapter {};
             this.researchers = db.allResearchers();
         }
 
@@ -64,6 +66,11 @@ namespace KIT506_Assignment_WPF.Controller
             return filteredResearchers;
         }
 
+        // Retrieve all attributes from researcher
+        ///public Researcher researcher(int researcherId)
+        //{
+        //    db.researcher
+        //}
     }
 }
 

@@ -27,8 +27,6 @@ namespace KIT506_Assignment_WPF
             InitializeComponent();
 
             this.researcherId = researcherId;
-
-            Debug.WriteLine(researcherId);
         }
     }
 }

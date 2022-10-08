@@ -53,7 +53,7 @@ namespace KIT506_Assignment_WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KIT506_Assignment_WPF;V1.0.0.0;component/researcher_report.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KIT506_Assignment_WPF;component/researcher_report.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Researcher_Report.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

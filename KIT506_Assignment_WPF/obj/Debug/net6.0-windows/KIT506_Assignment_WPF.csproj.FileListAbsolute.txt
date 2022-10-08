@@ -30,3 +30,4 @@
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\KIT506_Assignment_WPF.csproj.CopyComplete
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\ResearcherDetailPage.g.cs
 \\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\ResearcherDetailPage.baml
+\\Mac\Home\Desktop\KIT506_Assignment_WPF\KIT506_Assignment_WPF\obj\Debug\net6.0-windows\Researcher_Report.g.cs
