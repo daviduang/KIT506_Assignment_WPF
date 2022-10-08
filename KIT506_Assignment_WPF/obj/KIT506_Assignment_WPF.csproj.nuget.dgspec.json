@@ -1,28 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {}
+<<<<<<< Updated upstream
+    "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {
+    "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "projectUniqueName": "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
         "projectName": "KIT506_Assignment_WPF",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
-        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+        "projectPath": "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "packagesPath": "C:\\Users\\ryenz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ryenz\\OneDrive\\文档\\GitHub\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+=======
+    "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {}
+  },
+  "projects": {
+    "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "projectName": "KIT506_Assignment_WPF",
+        "projectPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+        "packagesPath": "C:\\Users\\ryenz\\.nuget\\packages\\",
+        "outputPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ryenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -55,8 +65,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,7 +77,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
