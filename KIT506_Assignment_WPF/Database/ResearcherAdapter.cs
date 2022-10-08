@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using KIT506_Assignment_WPF.Model;
 using MySql.Data.MySqlClient;
@@ -21,15 +22,33 @@ namespace KIT506_Assignment_WPF.Database
 
             while (reader.Read())
             {
-                Researcher researcher = new Researcher {
-                    id = (int)reader["id"],
-                    type = (Researcher.Type) Enum.Parse(typeof(Researcher.Type), (string)reader["type"]),
-                    given_name = (string)reader["given_name"],
-                    family_name = (string)reader["family_name"],
-                    title = (string)reader["title"],
-                    level = (reader["level"] == DBNull.Value) ? "" : (string)reader["level"],
-                };
-                researchers.Add(researcher);
+                if ((string)reader["type"] == "Staff") {
+                    Staff staff = new Staff
+                    {
+                        id = (int)reader["id"],
+                        given_name = (string)reader["given_name"],
+                        family_name = (string)reader["family_name"],
+                        title = (string)reader["title"],
+                        type = Researcher.Type.Staff,
+                        level = (Staff.Level)Enum.Parse(typeof(Staff.Level), (string)reader["level"]),
+                    };
+
+                    researchers.Add(staff);
+                }
+      
+                else
+                {
+                    Student student = new Student
+                    {
+                        id = (int)reader["id"],
+                        given_name = (string)reader["given_name"],
+                        family_name = (string)reader["family_name"],
+                        title = (string)reader["title"],
+                        type = Researcher.Type.Student,
+                    };
+
+                    researchers.Add(student);
+                }
             }
             return researchers;
         }

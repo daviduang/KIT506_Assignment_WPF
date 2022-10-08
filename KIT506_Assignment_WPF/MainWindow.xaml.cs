@@ -65,6 +65,7 @@ namespace KIT506_Assignment_WPF
                 string level = e.AddedItems[0].ToString().Substring(length-1, 1);
 
                 List<Researcher> filteredResearchers = controller.filterResearchers(level);
+
                 updateResearcherListView(filteredResearchers);
             }
         }

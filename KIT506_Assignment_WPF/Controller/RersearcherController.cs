@@ -43,11 +43,17 @@ namespace KIT506_Assignment_WPF.Controller
         public List<Researcher> filterResearchers(string level)
         {
 
+            // Generate a staff researcher list
+            List<Researcher> staffs =
+                (from researcher in researchers
+                 where researcher.type == Researcher.Type.Staff
+                 select researcher).ToList();
+
             // Generate a filtered researcher list
             List<Researcher> filteredResearchers =
-                (from researcher in researchers
-                where researcher.level == level
-                select researcher).ToList();
+                (from staff in staffs
+                 where ((Staff)staff).level.ToString().Equals(level)
+                 select staff).ToList();
 
             return filteredResearchers;
         }

@@ -19,7 +19,6 @@ namespace KIT506_Assignment_WPF.Model
         public Campus campus { get; set; }
         public string email { get; set; }
         public string photo { get; set; }
-        public String level { get; set; }
         public DateTime utas_start { get; set; }
         public DateTime current_start { get; set; }
     }
