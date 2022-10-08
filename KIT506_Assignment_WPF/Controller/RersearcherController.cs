@@ -63,6 +63,7 @@ namespace KIT506_Assignment_WPF.Controller
 
             return filteredResearchers;
         }
+
     }
 }
 
