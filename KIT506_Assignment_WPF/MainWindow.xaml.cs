@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 using KIT506_Assignment_WPF.Controller;
 using KIT506_Assignment_WPF.Model;
-using KIT506_Assignment_WPF.Database;
 using System.Diagnostics;
 
 namespace KIT506_Assignment_WPF
