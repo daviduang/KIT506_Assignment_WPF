@@ -18,8 +18,6 @@ namespace KIT506_Assignment_WPF.Database
 
             connection = new MySqlConnection(conn);
 
-            connection.Open();
-
             // Success message
             Console.WriteLine("Connection Success!!");
         }

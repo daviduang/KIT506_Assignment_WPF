@@ -8,18 +8,18 @@ namespace KIT506_Assignment_WPF.Controller
 {
     public class ResearcherController
     {
-        // Create list of researchers
+        // Store a list of researchers from database
         public List<Researcher> researchers;
 
-        // Create a db connection
-        ResearcherAdapter db;
+        // Store a database connection
+        public ResearcherAdapter db;
 
         // Initialise the lise of researchers
         public ResearcherController()
         {
-            // Connect to researcher database and initalise the de
+            // Connect to researcher database
             this.db = new ResearcherAdapter {};
-            this.researchers = db.allResearchers();
+            this.researchers = db.getAllResearchers();
         }
 
         // Display all researchers
@@ -45,16 +45,22 @@ namespace KIT506_Assignment_WPF.Controller
         public List<Researcher> filterResearchers(string level)
         {
 
+            // Generate a staff researcher list
+            List<Researcher> staffs =
+                (from researcher in researchers
+                 where researcher.type == Researcher.Type.Staff
+                 select researcher).ToList();
+
             // Generate a filtered researcher list
             List<Researcher> filteredResearchers =
-                (from researcher in researchers
-                where researcher.level == level
-                select researcher).ToList();
+                (from staff in staffs
+                 where ((Staff)staff).level.ToString().Equals(level)
+                 select staff).ToList();
 
             return filteredResearchers;
         }
 
-        // Filter researcher by firstname or lastname
+        // Filter researcher list by firstname or lastname
         public List<Researcher> searchResearchers(string name)
         {
             // Generate a filtered researcher list
@@ -66,11 +72,11 @@ namespace KIT506_Assignment_WPF.Controller
             return filteredResearchers;
         }
 
-        // Retrieve all attributes from researcher
-        ///public Researcher researcher(int researcherId)
-        //{
-        //    db.researcher
-        //}
+        // Retrieve a full detail researcher by id
+        public Researcher getResearcher(int id)
+        {
+            return db.getOneResearcher(id);
+        }
     }
 }
 
