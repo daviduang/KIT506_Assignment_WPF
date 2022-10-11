@@ -34,8 +34,6 @@ namespace KIT506_Assignment_WPF
 
             this.researcherId = researcherId;
 
-
-
             Researcher researcher = controller.getResearcher(researcherId);
 
             Debug.WriteLine(researcher.family_name);

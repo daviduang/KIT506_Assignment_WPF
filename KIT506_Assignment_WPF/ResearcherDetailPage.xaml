@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KIT506_Assignment_WPF"
         mc:Ignorable="d"
-        Title="ResearcherDetailPage" Height="450" Width="800">
+        Title="ResearcherDetailPage" Height="600" Width="400">
     <Grid>
-        <TextBlock> Researcher Detail Page</TextBlock>
+        <StackPanel>
+
+            <TextBlock FontWeight="Bold" TextAlignment="Center"> Researcher Detail Page</TextBlock>
+
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0">
+
+                <!-- Button groups: All reseachers, Student only and Employment Level -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0">Photo</TextBlock>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Margin="0 10 0 0">Name: </TextBlock>
+                        <TextBlock Margin="0 10 0 0" >Email: </TextBlock>
+                        <TextBlock Margin="0 10 0 0">School: </TextBlock>
+                        <TextBlock Margin="0 10 0 10">Campus: </TextBlock>
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Occupation information</TextBlock>
+
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+
+                <StackPanel>
+                    <TextBlock>Current Job Title:</TextBlock>
+                    <TextBlock Margin="0 10 0 0" >Commenced with Institutions:</TextBlock>
+                    <TextBlock Margin="0 10 0 0">Commenced with Current Position:</TextBlock>
+                    <TextBlock Margin="0 10 0 0">Tenure:</TextBlock>
+                    <TextBlock Margin="0 10 0 0">Publication:</TextBlock>
+                </StackPanel>
+
+            </Border>
+
+            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Staff information</TextBlock>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+
+                <StackPanel>
+                    <TextBlock>3-Year Average: </TextBlock>
+                    <TextBlock Margin="0 10 0 0" >Performance: </TextBlock>
+                    <TextBlock Margin="0 10 0 0">Supervisions: </TextBlock>
+                </StackPanel>
+
+            </Border>
+
+            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Student information</TextBlock>
+
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+
+                <StackPanel>
+                    <TextBlock>Degree:</TextBlock>
+                    <TextBlock Margin="0 10 0 0" >Supervisor:</TextBlock>
+                </StackPanel>
+
+            </Border>
+            
+            <!-- Staff and Student Information Block Template -->
+            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Student information</TextBlock>
+
+            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+
+                <StackPanel>
+                    <TextBlock x:Name="FieldOne" Text="{Binding}"></TextBlock>
+                    <TextBlock x:Name="FieldTwo" Margin="0 10 0 0" Text="{Binding}"></TextBlock>
+                    <TextBlock x:Name="FieldThree" Margin="0 10 0 0" Text="{Binding}"></TextBlock>
+                </StackPanel>
+
+            </Border>
+
+
+        </StackPanel>
+
     </Grid>
 </Window>

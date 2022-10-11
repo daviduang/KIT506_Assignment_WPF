@@ -21,6 +21,7 @@ namespace KIT506_Assignment_WPF.Model
         public string photo { get; set; }
         public DateTime utas_start { get; set; }
         public DateTime current_start { get; set; }
+
     }
 }
 

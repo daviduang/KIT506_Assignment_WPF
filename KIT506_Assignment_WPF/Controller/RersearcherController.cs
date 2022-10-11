@@ -77,6 +77,7 @@ namespace KIT506_Assignment_WPF.Controller
         {
             return db.getOneResearcher(id);
         }
+
     }
 }
 
