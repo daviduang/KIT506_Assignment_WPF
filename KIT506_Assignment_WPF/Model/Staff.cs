@@ -10,5 +10,6 @@ namespace KIT506_Assignment_WPF.Model
     {
         public enum Level { A, B, C, D, E };
         public Level level { get; set; }
+        public double performance { get; set; }
     }
 }

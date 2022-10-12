@@ -6,16 +6,7 @@
         xmlns:local="clr-namespace:KIT506_Assignment_WPF"
         mc:Ignorable="d"
         Title="Researcher_Report" Height="450" Width="800">
-    <Window.Resources>
-        <DataTemplate x:Key="TemplateData">
-            <DataGrid x:Name="PerformanceGrid">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Performance" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Name" Width="*"></DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </DataTemplate>
-    </Window.Resources>
+   
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -23,13 +14,73 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <TabControl Grid.ColumnSpan="2" Margin="10,26,10,0" >
-            <TabItem ContentTemplate="{StaticResource TemplateData}"  Header="Star Performance" x:Name="StarPerformance" Width="150" Height="20"></TabItem>
-            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Blow Expectation" x:Name="BlowExpectation" Width="150" Height="20"></TabItem>
-            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Meeting Minimun" x:Name="MeetingMinimun" Width="150" Height="20"></TabItem>
-            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Poor" x:Name="Poor" Width="150" Height="20"></TabItem>
+        <TabControl Grid.ColumnSpan="2" Margin="10,26,10,0" SelectionChanged="TabControl_SelectionChanged" >
+            <TabItem Header="Star Performance" x:Name="StarPerformance" Width="150" Height="20">
+                <DataGrid x:Name="StarPerformanceGrid" IsHitTestVisible="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Performance" Binding="{Binding performance}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="*">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}{0}, {1} ({2})">
+                                    <Binding Path="family_name"></Binding>
+                                    <Binding Path="given_name"></Binding>
+                                    <Binding Path="title"></Binding>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Meeting Minimun" x:Name="MeetingMinimun" Width="150" Height="20">
+                <DataGrid x:Name="MeetingMinimunGrid" IsHitTestVisible="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Performance" Binding="{Binding performance}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="*">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}{0}, {1} ({2})">
+                                    <Binding Path="family_name"></Binding>
+                                    <Binding Path="given_name"></Binding>
+                                    <Binding Path="title"></Binding>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Blow Expectation" x:Name="BlowExpectation" Width="150" Height="20">
+                <DataGrid x:Name="BlowExpectationGrid" IsHitTestVisible="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Performance" Binding="{Binding performance}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="*">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}{0}, {1} ({2})">
+                                    <Binding Path="family_name"></Binding>
+                                    <Binding Path="given_name"></Binding>
+                                    <Binding Path="title"></Binding>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Poor" x:Name="Poor" Width="150" Height="20" >
+                <DataGrid x:Name="PoorGrid" IsHitTestVisible="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Performance" Binding="{Binding performance}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="*">
+                            <DataGridTextColumn.Binding>
+                                <MultiBinding StringFormat="{}{0}, {1} ({2})">
+                                    <Binding Path="family_name"></Binding>
+                                    <Binding Path="given_name"></Binding>
+                                    <Binding Path="title"></Binding>
+                                </MultiBinding>
+                            </DataGridTextColumn.Binding>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
         </TabControl>
-        <Button Content="Copy Emails" HorizontalAlignment="Left" Margin="657,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.083,-0.704" Height="21" Width="124" Grid.ColumnSpan="2"/>
+        <Button Click="copyEmails" Content="Copy Emails" HorizontalAlignment="Left" Margin="657,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.083,-0.704" Height="21" Width="124" Grid.ColumnSpan="2"/>
 
 
     </Grid>

@@ -898,24 +898,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ryenz\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+      "projectUniqueName": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
       "projectName": "KIT506_Assignment_WPF",
-      "projectPath": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
-      "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "\\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
+      "projectPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF.csproj",
+      "packagesPath": "C:\\Users\\ryenz\\.nuget\\packages\\",
+      "outputPath": "J:\\UnityGame\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ryenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -968,13 +963,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file \\\\Mac\\Home\\Desktop\\KIT506_Assignment_WPF\\KIT506_Assignment_WPF\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

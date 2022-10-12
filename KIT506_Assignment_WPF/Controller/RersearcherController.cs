@@ -41,6 +41,19 @@ namespace KIT506_Assignment_WPF.Controller
             return allStudents;
         }
 
+        // Display all staff
+        public List<Researcher> allStaffs()
+        {
+
+            // Generate a filtered researcher list
+            List<Researcher> allStaffs =
+                (from researcher in researchers
+                 where researcher.type.ToString().Equals("Staff")
+                 select researcher).ToList();
+
+            return allStaffs;
+        }
+
         // Filter researcher list by level
         public List<Researcher> filterResearchers(string level)
         {
@@ -77,6 +90,8 @@ namespace KIT506_Assignment_WPF.Controller
         {
             return db.getOneResearcher(id);
         }
+
+
 
     }
 }

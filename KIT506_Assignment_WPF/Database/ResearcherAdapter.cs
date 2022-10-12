@@ -13,7 +13,7 @@ namespace KIT506_Assignment_WPF.Database
     {
 
         /* Retrieve functions */
-
+       
         // Retrieve all researchers
         public List<Researcher> getAllResearchers()
         {
@@ -33,6 +33,7 @@ namespace KIT506_Assignment_WPF.Database
                         family_name = (string)reader["family_name"],
                         title = (string)reader["title"],
                         type = Researcher.Type.Staff,
+                        email = (string)reader["email"],
                         level = (Level)Enum.Parse(typeof(Level), (string)reader["level"]),
                     };
 
@@ -47,6 +48,7 @@ namespace KIT506_Assignment_WPF.Database
                         given_name = (string)reader["given_name"],
                         family_name = (string)reader["family_name"],
                         title = (string)reader["title"],
+                        email = (string)reader["email"],
                         type = Researcher.Type.Student,
                     };
 
