@@ -6,61 +6,31 @@
         xmlns:local="clr-namespace:KIT506_Assignment_WPF"
         mc:Ignorable="d"
         Title="Researcher_Report" Height="450" Width="800">
-
-    
-    <Grid>
-        <Grid.Resources>
-            
-            <Style TargetType="Button">
-                <Style.Triggers>
-                    <Trigger Property="IsFocused" Value="True">
-                        <Trigger.EnterActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    
-                                    <DoubleAnimation Duration="0:0:0.550" To="26" 
-                                                        Storyboard.TargetProperty="Height" />
-                                    <DoubleAnimation Duration="0:0:0.550" To="148" 
-                                                        Storyboard.TargetProperty="Width" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </Trigger.EnterActions>
-                        <Trigger.ExitActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    
-                                    <DoubleAnimation Duration="0:0:0.550" To="24" 
-                                                        Storyboard.TargetProperty="Height" />
-                                    <DoubleAnimation Duration="0:0:0.550" To="142" 
-                                                        Storyboard.TargetProperty="Width" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </Trigger.ExitActions>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-            
-        </Grid.Resources>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button Content="Star Performance" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="24" Width="142"/>
-        <Button Content="Meeting Performance" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="24" Width="142"/>
-        <Button Content="Below Expectation" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top" Height="24" Width="142" Grid.Column="1"/>
-        <Button Content="Poor" HorizontalAlignment="Left" Margin="452,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="24" Width="140"/>
-        <Button Content="Copy Emails" Style="{x:Null}" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="617,7,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.083,-0.704" Height="21" Width="124"/>
-        <Grid Grid.ColumnSpan="2" Margin="0,34,0,0">
-            <DataGrid >
+    <Window.Resources>
+        <DataTemplate x:Key="TemplateData">
+            <DataGrid x:Name="PerformanceGrid">
                 <DataGrid.Columns>
-
-                    <DataGridTextColumn Header="Performance" Width="*" Binding="{Binding given_name}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Name" Width="2*" Binding="{Binding level}"></DataGridTextColumn>
-
+                    <DataGridTextColumn Header="Performance" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Name" Width="*"></DataGridTextColumn>
                 </DataGrid.Columns>
-
             </DataGrid>
-        </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.ColumnSpan="2" Margin="10,26,10,0" >
+            <TabItem ContentTemplate="{StaticResource TemplateData}"  Header="Star Performance" x:Name="StarPerformance" Width="150" Height="20"></TabItem>
+            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Blow Expectation" x:Name="BlowExpectation" Width="150" Height="20"></TabItem>
+            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Meeting Minimun" x:Name="MeetingMinimun" Width="150" Height="20"></TabItem>
+            <TabItem ContentTemplate="{StaticResource TemplateData}" Header="Poor" x:Name="Poor" Width="150" Height="20"></TabItem>
+        </TabControl>
+        <Button Content="Copy Emails" HorizontalAlignment="Left" Margin="657,11,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.083,-0.704" Height="21" Width="124" Grid.ColumnSpan="2"/>
+
 
     </Grid>
 </Window>

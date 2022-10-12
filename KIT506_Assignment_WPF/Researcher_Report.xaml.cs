@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KIT506_Assignment_WPF.Controller;
+using KIT506_Assignment_WPF.Model;
 
 namespace KIT506_Assignment_WPF
 {
@@ -19,9 +21,19 @@ namespace KIT506_Assignment_WPF
     /// </summary>
     public partial class Researcher_Report : Window
     {
+        //ResearcherController controller;
         public Researcher_Report()
         {
             InitializeComponent();
+          //  this.controller = new ResearcherController { };
+
+            // Display all researchers
+            //List<Researcher> researchers = controller.allResearchers();
+            
         }
+
+      
+
+        
     }
 }
