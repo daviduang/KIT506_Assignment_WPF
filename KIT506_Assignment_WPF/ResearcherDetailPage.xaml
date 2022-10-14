@@ -7,82 +7,149 @@
         mc:Ignorable="d"
         Title="ResearcherDetailPage" Height="600" Width="400">
     <Grid>
-        <StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="ResearcherDetailsPanel">
 
-            <TextBlock FontWeight="Bold" TextAlignment="Center"> Researcher Detail Page</TextBlock>
+                <TextBlock FontWeight="Bold" TextAlignment="Center"> Researcher Detail Page</TextBlock>
 
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0">
-
+                <Separator Margin="10 5 10 0"/>
+                
                 <!-- Button groups: All reseachers, Student only and Employment Level -->
-                <Grid>
+                <Grid Margin="10 0 10 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0">Photo</TextBlock>
+                    <Image Source="{Binding Path=photo}"></Image>
 
                     <StackPanel Grid.Column="1">
-                        <TextBlock Margin="0 10 0 0">Name: </TextBlock>
-                        <TextBlock Margin="0 10 0 0" >Email: </TextBlock>
-                        <TextBlock Margin="0 10 0 0">School: </TextBlock>
-                        <TextBlock Margin="0 10 0 10">Campus: </TextBlock>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Name:"></Label>
+                            <Label Content="{Binding Path=family_name}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Email:"></Label>
+                            <Label Content="{Binding Path=email}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="School/Unit:"></Label>
+                            <Label Content="{Binding Path=unit}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Campus:"></Label>
+                            <Label Content="{Binding Path=campus}"></Label>
+                        </StackPanel>
+
                     </StackPanel>
 
                 </Grid>
-            </Border>
 
-            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Occupation information</TextBlock>
+                <Separator Margin="10 0 10 0"/>
 
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+                <!-- Occupational infomation block -->
+                
+                <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Occupation information</TextBlock>
 
-                <StackPanel>
-                    <TextBlock>Current Job Title:</TextBlock>
-                    <TextBlock Margin="0 10 0 0" >Commenced with Institutions:</TextBlock>
-                    <TextBlock Margin="0 10 0 0">Commenced with Current Position:</TextBlock>
-                    <TextBlock Margin="0 10 0 0">Tenure:</TextBlock>
-                    <TextBlock Margin="0 10 0 0">Publication:</TextBlock>
+                <Separator Margin="10 10 10 0"/>
+
+                <StackPanel Margin="10 0 10 0">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Current Job Title:"></Label>
+                        <Label Content="{Binding Path=title}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Commenced with Institutions:"></Label>
+                        <Label Content="{Binding Path=utas_start}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Commenced with Current Position:"></Label>
+                        <Label Content="{Binding Path=current_start}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Tenure:"></Label>
+                        <Label Content="{Binding Path=tenure}"></Label>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Publications:"></Label>
+                        <Label Content="{Binding Path=publications}"></Label>
+                    </StackPanel>
+
                 </StackPanel>
 
-            </Border>
+                <Separator Margin="10 0 10 0"/>
 
-            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Staff information</TextBlock>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+                <!-- Staff/Student information block -->
 
-                <StackPanel>
-                    <TextBlock>3-Year Average: </TextBlock>
-                    <TextBlock Margin="0 10 0 0" >Performance: </TextBlock>
-                    <TextBlock Margin="0 10 0 0">Supervisions: </TextBlock>
-                </StackPanel>
+                <Grid x:Name="GridStaff">
 
-            </Border>
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Staff information</TextBlock>
 
-            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Student information</TextBlock>
+                        <Separator Margin="10 10 10 0"/>
 
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
+                        <StackPanel Margin="10 0 10 0">
+                            <TextBlock></TextBlock>
 
-                <StackPanel>
-                    <TextBlock>Degree:</TextBlock>
-                    <TextBlock Margin="0 10 0 0" >Supervisor:</TextBlock>
-                </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="3-Year Average:"></Label>
+                                <Label Content="{Binding Path=threeYearAverage}"></Label>
+                            </StackPanel>
 
-            </Border>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Performance:"></Label>
+                                <Label Content="{Binding Path=performance}"></Label>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Supervisions:"></Label>
+                                <Label Content="{Binding Path=supervisions}"></Label>
+                            </StackPanel>
+                            
+                        </StackPanel>
+                        
+                        <Separator Margin="10 10 10 0"/>
+                        
+                    </StackPanel>
+                </Grid>
+
+                <Grid x:Name="GridStudent">
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Student information</TextBlock>
+
+                        <Separator Margin="10 10 10 0"/>
+
+                        <StackPanel Margin="10 0 10 0">
+
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Degree:"></Label>
+                                <Label Content="{Binding Path=degree}"></Label>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Supervisor:"></Label>
+                                <Label Content="{Binding Path=supervisor_name}"></Label>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <Separator Margin="10 10 10 0"/>
+                        
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
             
-            <!-- Staff and Student Information Block Template -->
-            <TextBlock FontWeight="Bold" TextAlignment="Center" Margin="0 10 0 0">Student information</TextBlock>
-
-            <Border BorderBrush="Black" BorderThickness="1" Margin="0 10 0 0" Padding="10 10 10 10">
-
-                <StackPanel>
-                    <TextBlock x:Name="FieldOne" Text="{Binding}"></TextBlock>
-                    <TextBlock x:Name="FieldTwo" Margin="0 10 0 0" Text="{Binding}"></TextBlock>
-                    <TextBlock x:Name="FieldThree" Margin="0 10 0 0" Text="{Binding}"></TextBlock>
-                </StackPanel>
-
-            </Border>
-
-
-        </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>

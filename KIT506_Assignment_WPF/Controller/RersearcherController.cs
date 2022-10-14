@@ -41,6 +41,47 @@ namespace KIT506_Assignment_WPF.Controller
             return allStudents;
         }
 
+        // Display all stuffs
+        public List<Researcher> allStaffs()
+        {
+
+            // Generate a filtered researcher list
+            List<Researcher> allStaffs =
+                (from researcher in researchers
+                 where researcher.type.ToString().Equals("Staff")
+                 select researcher).ToList();
+
+            return allStaffs;
+        }
+
+        // Get number of supervisions of a staff researcher
+        public int getSupervisions(Staff staff)
+        {
+            List<Researcher> students = allStudents();
+
+            int supervisionsCount = 0;
+
+            // Find if any student is currently supervised by the Staff
+            foreach (Researcher student in students) {
+
+                if (((Student)student).supervisor_id == staff.id )
+                {
+                    supervisionsCount++;
+                }
+            }
+
+            return supervisionsCount;
+        }
+
+        // Get supervisor name of a student researcher
+        public string getSupervisorName(Student student)
+        {
+            // get the supervisor of the student researcher
+            Researcher supervisor = getResearcher(student.supervisor_id);
+
+            return supervisor.title + ' ' + supervisor.given_name + ' ' + supervisor.family_name;
+        }
+
         // Filter researcher list by level
         public List<Researcher> filterResearchers(string level)
         {

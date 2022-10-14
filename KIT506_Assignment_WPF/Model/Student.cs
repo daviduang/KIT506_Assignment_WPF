@@ -10,5 +10,8 @@ namespace KIT506_Assignment_WPF.Model
     {
         public int supervisor_id { get; set; }
         public string degree { get; set; }
+
+        // Non-database attributes
+        public string supervisor_name { get; set; }
     }
 }

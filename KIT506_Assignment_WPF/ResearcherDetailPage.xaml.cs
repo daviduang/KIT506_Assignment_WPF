@@ -23,20 +23,39 @@ namespace KIT506_Assignment_WPF
     /// </summary>
     public partial class ResearcherDetailPage : Window
     {
-        public int researcherId;
+        // Stores the researcher
+        public Researcher researcher;
 
-        // Initialise researcher list controller
-        private ResearcherController controller = new ResearcherController();
+        // Initialise researcher controller
+        private ResearcherController researcherController = new ResearcherController();
+
+        // Initialise publication controller
+        private PublicationController publicationController = new PublicationController();
 
         public ResearcherDetailPage(int researcherId)
         {
             InitializeComponent();
 
-            this.researcherId = researcherId;
+            this.researcher = researcherController.getResearcher(researcherId);
+            researcher.publications = publicationController.getPublications(researcher);
 
-            Researcher researcher = controller.getResearcher(researcherId);
+            // If the researcher is staff, drop the staff block
+            if (this.researcher.type == Researcher.Type.Staff)
+            {
+                GridStudent.Children.Clear();
+                ((Staff)researcher).threeYearAverage = publicationController.getAverage(researcher);
+                ((Staff)researcher).performance = publicationController.getPerformance(researcher);
+                ((Staff)researcher).supervisions = researcherController.getSupervisions((Staff)researcher);
+            }
 
-            Debug.WriteLine(researcher.family_name);
+            // If the researcher is student, drop the student block
+            else
+            {
+                GridStaff.Children.Clear();
+                ((Student)researcher).supervisor_name = researcherController.getSupervisorName((Student)researcher);
+            }
+
+            ResearcherDetailsPanel.DataContext = researcher;
         }
     }
 }

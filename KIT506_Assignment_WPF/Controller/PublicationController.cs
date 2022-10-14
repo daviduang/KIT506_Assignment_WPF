@@ -57,6 +57,8 @@ namespace KIT506_Assignment_WPF.Controller
             return average / performance[((Staff)researcher).level];
         }
 
+
+
     }
 }
 

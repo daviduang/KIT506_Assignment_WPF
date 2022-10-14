@@ -72,7 +72,7 @@
             </Grid>
 
             <!-- Researcher List View  -->
-            <DataGrid x:Name="ResearchersTable" Margin="0 10 0 0" SelectionChanged="ResearchersTable_SelectionChanged">
+            <DataGrid x:Name="ResearchersTable" Margin="10 10 10 0" SelectionChanged="ResearchersTable_SelectionChanged">
 
                 <!-- Column definitions -->
                 <DataGrid.Columns>
@@ -94,6 +94,9 @@
                 </DataGrid.Columns>
 
             </DataGrid>
+
+            <!-- Researcher report button -->
+            <Button x:Name="reportBtn" Content="Researcher Report" Height="20" Margin="0 10 0 10" Click="clickReportButton"/>
 
         </StackPanel>
 

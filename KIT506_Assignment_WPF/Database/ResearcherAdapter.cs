@@ -48,6 +48,7 @@ namespace KIT506_Assignment_WPF.Database
                         family_name = (string)reader["family_name"],
                         title = (string)reader["title"],
                         type = Researcher.Type.Student,
+                        supervisor_id = (int)reader["supervisor_id"]
                     };
 
                     researchers.Add(student);
@@ -67,49 +68,52 @@ namespace KIT506_Assignment_WPF.Database
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
 
             Researcher researcher = new Researcher();
 
-            // Adding additional attributes based on the type of researcher
-            if ((string)reader["type"] == "Staff")
+            if (reader.Read())
             {
-                researcher = new Staff
+                // Adding additional attributes based on the type of researcher
+                if ((string)reader["type"] == "Staff")
                 {
-                    id = (int)reader["id"],
-                    type = (Researcher.Type)Enum.Parse(typeof(Researcher.Type), (string)reader["type"]),
-                    given_name = (string)reader["given_name"],
-                    family_name = (string)reader["family_name"],
-                    title = (string)reader["title"],
-                    unit = (string)reader["unit"],
-                    campus = (Researcher.Campus)Enum.Parse(typeof(Researcher.Campus), ((string)reader["campus"]).Replace(" ", "")),
-                    email = (string)reader["email"],
-                    photo = (string)reader["photo"],
-                    utas_start = (DateTime)reader["utas_start"],
-                    current_start = (DateTime)reader["current_start"],
-                    level = (Level)Enum.Parse(typeof(Level), (string)reader["level"]),
-                };
-            }
-            else
-            {
-                researcher = new Student
+                    researcher = new Staff
+                    {
+                        id = (int)reader["id"],
+                        type = (Researcher.Type)Enum.Parse(typeof(Researcher.Type), (string)reader["type"]),
+                        given_name = (string)reader["given_name"],
+                        family_name = (string)reader["family_name"],
+                        title = (string)reader["title"],
+                        unit = (string)reader["unit"],
+                        campus = (Researcher.Campus)Enum.Parse(typeof(Researcher.Campus), ((string)reader["campus"]).Replace(" ", "")),
+                        email = (string)reader["email"],
+                        photo = (string)reader["photo"],
+                        utas_start = (DateTime)reader["utas_start"],
+                        current_start = (DateTime)reader["current_start"],
+                        level = (Level)Enum.Parse(typeof(Level), (string)reader["level"]),
+                    };
+                }
+                else
                 {
-                    id = (int)reader["id"],
-                    type = (Researcher.Type)Enum.Parse(typeof(Researcher.Type), (string)reader["type"]),
-                    given_name = (string)reader["given_name"],
-                    family_name = (string)reader["family_name"],
-                    title = (string)reader["title"],
-                    unit = (string)reader["unit"],
-                    campus = (Researcher.Campus)Enum.Parse(typeof(Researcher.Campus), ((string)reader["campus"]).Replace(" ", "")),
-                    email = (string)reader["email"],
-                    photo = (string)reader["photo"],
-                    utas_start = (DateTime)reader["utas_start"],
-                    current_start = (DateTime)reader["current_start"],
-                    supervisor_id = (reader["supervisor_id"] == null) ? (int)reader["supervisor_id"] : 0,
-                    degree = (reader["degree"] == DBNull.Value) ? "" : (string)reader["degree"],
+                    researcher = new Student
+                    {
+                        id = (int)reader["id"],
+                        type = (Researcher.Type)Enum.Parse(typeof(Researcher.Type), (string)reader["type"]),
+                        given_name = (string)reader["given_name"],
+                        family_name = (string)reader["family_name"],
+                        title = (string)reader["title"],
+                        unit = (string)reader["unit"],
+                        campus = (Researcher.Campus)Enum.Parse(typeof(Researcher.Campus), ((string)reader["campus"]).Replace(" ", "")),
+                        email = (string)reader["email"],
+                        photo = (string)reader["photo"],
+                        utas_start = (DateTime)reader["utas_start"],
+                        current_start = (DateTime)reader["current_start"],
+                        supervisor_id = (int)reader["supervisor_id"],
+                        degree = (reader["degree"] == DBNull.Value) ? "" : (string)reader["degree"],
+                    };
                 };
-            };
 
+                reader.Close();
+            }
             connection.Close();
             return researcher;
         }

@@ -22,6 +22,14 @@ namespace KIT506_Assignment_WPF.Model
         public DateTime utas_start { get; set; }
         public DateTime current_start { get; set; }
 
+        // Non-database attributes
+        public double tenure { get
+            {
+                return Math.Round((DateTime.Today - utas_start).Days/365.0, 2);
+            }}
+
+        public int publications { get; set; }
+
     }
 }
 

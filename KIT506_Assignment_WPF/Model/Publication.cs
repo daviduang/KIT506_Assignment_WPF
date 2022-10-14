@@ -5,7 +5,7 @@ namespace KIT506_Assignment_WPF.Model
     public class Publication
     {
         /* Publication's enumatations: type */
-        public enum Type { Conference, Journal };
+        public enum Type { Conference, Journal, Other };
 
         /* Publication's attributes */
         public string doi { get; set; }

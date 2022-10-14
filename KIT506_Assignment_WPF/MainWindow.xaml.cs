@@ -30,6 +30,9 @@ namespace KIT506_Assignment_WPF
         // Initialise researcher detail page view
         ResearcherDetailPage researcherDetailPage;
 
+        // Initialise researcher report page view
+        Researcher_Report researcherReportPage;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -99,6 +102,12 @@ namespace KIT506_Assignment_WPF
             }
         }
 
+        // Show Researcher Report page
+        private void clickReportButton(object sender, RoutedEventArgs e)
+        {
+            researcherReportPage = new Researcher_Report();
+            researcherReportPage.Show();
+        }
 
         // Show Researcher details page
         private void ResearchersTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -114,6 +123,7 @@ namespace KIT506_Assignment_WPF
                 researcherDetailPage.Show();
             }
         }
+
     }
 
 
